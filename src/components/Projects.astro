@@ -3,25 +3,25 @@ const uxProjects = [
   {
     title: "Mercaorder",
     description: "Enhancing the supermarket shopping experience through efficient and user-friendly order screens.",
-    tags: ["Case Study", "UX Design", "Design Sprint", "Personal Project"],
+    tags: ["UX Design", "Design Sprint", "Personal Project"],
     color: "from-pink-500 to-rose-500",
-    emoji: "🛒",
+    image: "/Assets/img/projects/mercaorder-mobile.png",
     link: "https://medium.com/@etana87/mira-mamá-sin-entrar-al-súper-ebb721b336cc"
   },
   {
     title: "Legaleasy",
     description: "An app that simplifies complex legal vocabulary, helping users navigate legal documents with ease.",
-    tags: ["Case Study", "UX Design", "Design Thinking", "Personal Project"],
+    tags: ["UX Design", "Design Thinking", "Personal Project"],
     color: "from-purple-500 to-indigo-500",
-    emoji: "⚖️",
+    image: "/Assets/img/projects/legaleasy-mobile.png",
     link: "https://medium.com/@etana87/la-parte-contratante-de-la-primera-parte-bbdd4c0db7f0"
   },
   {
     title: "Nakama",
     description: "A smart office with a virtual pet assistant designed to boost productivity and employee engagement.",
-    tags: ["Case Study", "UX Design", "Lean UX", "Personal Project"],
+    tags: ["UX Design", "Lean UX", "Personal Project"],
     color: "from-cyan-500 to-teal-500",
-    emoji: "🐾",
+    image: "/Assets/img/projects/nakama-desktop.png",
     link: "https://nakamasama.framer.website/"
   },
 ];
@@ -31,48 +31,42 @@ const webProjects = [
     title: "Lefebvre",
     description: "Web design and layout using HTML5, Bootstrap, Twig and PHP. New branding and accessibility.",
     tags: ["HTML5", "Bootstrap", "Accessibility", "UX/UI"],
-    color: "from-orange-500 to-amber-500",
-    emoji: "🏛️",
+    image: "/Assets/img/projects/lefebvre-desktop.png",
     link: "https://lefebvre.es/"
   },
   {
     title: "Cuidarnos Juntos - Pfizer",
     description: "Web development with Drupal and PHP for Pfizer, through Quodem.",
     tags: ["Drupal", "PHP", "HTML5", "CSS3"],
-    color: "from-blue-500 to-cyan-500",
-    emoji: "💊",
+    image: "/Assets/img/projects/cuidarnos-desktop.png",
     link: "https://www.cuidarnosjuntos.com.ar/"
   },
   {
     title: "Sogug",
     description: "Web development with Umbraco and HTML5 for SOGUG, through Quodem.",
     tags: ["Umbraco", "HTML5", "CSS3"],
-    color: "from-green-500 to-emerald-500",
-    emoji: "🌿",
+    image: "/Assets/img/projects/sogug-desktop.png",
     link: "https://sogug.es/home/"
   },
   {
     title: "Agency",
     description: "Personal agency web project currently in production.",
     tags: ["HTML5", "SASS", "JavaScript"],
-    color: "from-violet-500 to-purple-500",
-    emoji: "🏢",
+    image: "/Assets/img/projects/agency-desktop.png",
     link: "https://proyecto2-practica-agencia.mpaste.es/"
   },
   {
     title: "MSD",
     description: "Web development with Wordpress for MSD, through Quodem.",
     tags: ["Wordpress", "HTML5", "CSS3"],
-    color: "from-red-500 to-rose-500",
-    emoji: "💉",
+    image: "/Assets/img/projects/msd-desktop.png",
     link: "https://www.msd.es/"
   },
   {
     title: "Organon",
     description: "Web development with Sharepoint for Organon, through Quodem.",
     tags: ["Sharepoint", "HTML5", "CSS3"],
-    color: "from-teal-500 to-green-500",
-    emoji: "🔬",
+    image: "/Assets/img/projects/organon-desktop.png",
     link: "https://www.organon.com/spain/"
   },
 ];
@@ -99,8 +93,15 @@ const webProjects = [
         {uxProjects.map(project => (
           <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`View project ${project.title}`} class="project-card opacity-0 group relative bg-gray-900 rounded-2xl overflow-hidden border border-white/10 hover:border-white/30 transition-all hover:-translate-y-2 duration-300">
           
-            <div class={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center text-6xl relative`}>
-              {project.emoji}
+            <div class="h-48 overflow-hidden relative">
+              <img
+                src={project.image}
+                alt={project.title}
+                width="400"
+                height="192"
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
               <!-- Overlay hover -->
               <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <span class="text-white text-sm font-semibold tracking-widest uppercase flex items-center gap-2">
@@ -136,9 +137,16 @@ const webProjects = [
       <div class="grid md:grid-cols-3 gap-8">
         {webProjects.map(project => (
           <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`View project ${project.title}`} class="project-card opacity-0 group relative bg-gray-900 rounded-2xl overflow-hidden border border-white/10 hover:border-white/30 transition-all hover:-translate-y-2 duration-300">
-            
-            <div class={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center text-6xl relative`}>
-              {project.emoji}
+          
+            <div class="h-48 overflow-hidden relative">
+              <img
+                src={project.image}
+                alt={project.title}
+                width="400"
+                height="192"
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
               <!-- Overlay hover -->
               <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <span class="text-white text-sm font-semibold tracking-widest uppercase flex items-center gap-2">
