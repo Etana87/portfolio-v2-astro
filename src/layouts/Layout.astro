@@ -1,23 +1,83 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+const {
+  title = "Mercedes de Pascual — UX Engineer & Web Designer",
+  description = "Portfolio of Mercedes de Pascual, UX Engineer and Web Designer with over 8 years of experience creating digital products focused on functionality, aesthetics and user experience."
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="UX Engineer, UX Designer, UI Designer, Web Designer, Figma, Accessibility, WCAG, Frontend, Mercedes de Pascual, Meru" />
+    <meta name="author" content="Mercedes de Pascual" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.mpaste.es/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.mpaste.es/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="https://www.mpaste.es/og-image.jpg" />
+    <meta property="og:locale" content="en_GB" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.mpaste.es/" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://www.mpaste.es/og-image.jpg" />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mercedes de Pascual",
+      "alternateName": "Meru",
+      "url": "https://www.mpaste.es",
+      "image": "https://www.mpaste.es/og-image.jpg",
+      "jobTitle": "UX Engineer & Web Designer",
+      "description": "UX Engineer and Web Designer with over 8 years of experience creating digital products focused on functionality, aesthetics and user experience.",
+      "knowsAbout": ["UX Design", "UI Design", "Web Design", "Figma", "HTML5", "CSS3", "JavaScript", "React", "WCAG Accessibility", "Design Systems"],
+      "sameAs": [
+        "https://www.linkedin.com/in/merpaste/",
+        "https://medium.com/@etana87",
+        "https://www.figma.com/@mercedesdepascu",
+        "https://github.com/Etana87/",
+        "https://vimeo.com/user16469809"
+      ]
+    }
+    </script>
+
+    <!-- Favicons -->
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="manifest" href="/site.webmanifest" />
+	<meta name="theme-color" content="#0a0a0a" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Lora:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap" />
+
+    <!-- Styles -->
+    <slot name="head" />
+  </head>
+  <body class="bg-gray-950 text-white">
+    <slot />
+  </body>
+</html>
