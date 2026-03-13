@@ -1,0 +1,53 @@
+---
+---
+
+<section id="about" aria-label="About me" class="py-32 px-6">
+  <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+
+    <div class="relative flex justify-center group opacity-0" data-animate>
+      <div class="w-64 h-64 rounded-3xl bg-gradient-to-br from-[#ffcdd4] via-[#fe6e86] to-[#c20e3d] p-1">
+        <img 
+          src="/img-about.webp" alt="Mercedes de Pascual" class="w-full h-full rounded-3xl object-cover"
+        />
+      </div>
+      <div class="absolute -top-6 -right-6 w-32 h-32 bg-[#c20e3d]/40 rounded-full blur-xl transition-all duration-700 group-hover:bg-[#ffcdd4]/40 group-hover:-top-2 group-hover:-right-0"></div>
+      <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-[#ffcdd4]/30 rounded-full blur-xl transition-all duration-700 group-hover:bg-[#c20e3d]/40 group-hover:-bottom-2 group-hover:-left-0"></div>
+    </div>
+
+    <div>
+      <p class="text-[#fe6e86] font-medium tracking-widest uppercase text-sm mb-4 opacity-0" data-animate data-delay="100">About me</p>
+      <h2 class="text-4xl font-black mb-6 text-white opacity-0" data-animate data-delay="150">
+        Designing with purpose, <span class="bg-gradient-to-r from-[#fe6e86] to-[#ffcdd4] bg-clip-text text-transparent">building with care</span>
+      </h2>
+      <p class="text-white/60 leading-relaxed mb-6 opacity-0" data-animate data-delay="200">
+        I'm a UX Engineer with over 8 years of experience creating digital products that balance aesthetics, functionality, and real user needs. I care deeply about crafting interfaces that feel intuitive and inclusive — design that works for everyone.
+      </p>
+      <p class="text-white/60 leading-relaxed mb-8 opacity-0" data-animate data-delay="250">
+        Currently working full-time while continuously expanding my knowledge in AI, frontend development, UX/UI design, and WCAG accessibility standards. I believe great digital experiences are built at the intersection of empathy, technical skill, and attention to detail.
+      </p>
+
+      <div class="flex flex-wrap gap-3 opacity-0" data-animate data-delay="300">
+        {["UI Design", "UX Research", "Figma", "HTML5/CSS3", "JavaScript", "React", "WCAG Accessibility", "Design Systems", "AI"].map(skill => (
+          <span class="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-white/70 hover:border-[#fe6e86]/50 transition-colors">
+            {skill}
+          </span>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import { animate, inView } from 'motion';
+
+  document.querySelectorAll('[data-animate]').forEach((el) => {
+    const delay = Number(el.getAttribute('data-delay') || 0) / 1000;
+    inView(el, () => {
+      animate(el,
+        { opacity: [0, 1], y: [30, 0] },
+        { duration: 0.7, delay, easing: 'ease-out' }
+      );
+    });
+  });
+</script>

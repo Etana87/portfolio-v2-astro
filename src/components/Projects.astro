@@ -1,0 +1,194 @@
+---
+const uxProjects = [
+  {
+    title: "Mercaorder",
+    description: "Enhancing the supermarket shopping experience through efficient and user-friendly order screens.",
+    tags: ["Case Study", "UX Design", "Design Sprint", "Personal Project"],
+    color: "from-pink-500 to-rose-500",
+    emoji: "🛒",
+    link: "https://medium.com/@etana87/mira-mamá-sin-entrar-al-súper-ebb721b336cc"
+  },
+  {
+    title: "Legaleasy",
+    description: "An app that simplifies complex legal vocabulary, helping users navigate legal documents with ease.",
+    tags: ["Case Study", "UX Design", "Design Thinking", "Personal Project"],
+    color: "from-purple-500 to-indigo-500",
+    emoji: "⚖️",
+    link: "https://medium.com/@etana87/la-parte-contratante-de-la-primera-parte-bbdd4c0db7f0"
+  },
+  {
+    title: "Nakama",
+    description: "A smart office with a virtual pet assistant designed to boost productivity and employee engagement.",
+    tags: ["Case Study", "UX Design", "Lean UX", "Personal Project"],
+    color: "from-cyan-500 to-teal-500",
+    emoji: "🐾",
+    link: "https://nakamasama.framer.website/"
+  },
+];
+
+const webProjects = [
+  {
+    title: "Lefebvre",
+    description: "Web design and layout using HTML5, Bootstrap, Twig and PHP. New branding and accessibility.",
+    tags: ["HTML5", "Bootstrap", "Accessibility", "UX/UI"],
+    color: "from-orange-500 to-amber-500",
+    emoji: "🏛️",
+    link: "https://lefebvre.es/"
+  },
+  {
+    title: "Cuidarnos Juntos - Pfizer",
+    description: "Web development with Drupal and PHP for Pfizer, through Quodem.",
+    tags: ["Drupal", "PHP", "HTML5", "CSS3"],
+    color: "from-blue-500 to-cyan-500",
+    emoji: "💊",
+    link: "https://www.cuidarnosjuntos.com.ar/"
+  },
+  {
+    title: "Sogug",
+    description: "Web development with Umbraco and HTML5 for SOGUG, through Quodem.",
+    tags: ["Umbraco", "HTML5", "CSS3"],
+    color: "from-green-500 to-emerald-500",
+    emoji: "🌿",
+    link: "https://sogug.es/home/"
+  },
+  {
+    title: "Agency",
+    description: "Personal agency web project currently in production.",
+    tags: ["HTML5", "SASS", "JavaScript"],
+    color: "from-violet-500 to-purple-500",
+    emoji: "🏢",
+    link: "https://proyecto2-practica-agencia.mpaste.es/"
+  },
+  {
+    title: "MSD",
+    description: "Web development with Wordpress for MSD, through Quodem.",
+    tags: ["Wordpress", "HTML5", "CSS3"],
+    color: "from-red-500 to-rose-500",
+    emoji: "💉",
+    link: "https://www.msd.es/"
+  },
+  {
+    title: "Organon",
+    description: "Web development with Sharepoint for Organon, through Quodem.",
+    tags: ["Sharepoint", "HTML5", "CSS3"],
+    color: "from-teal-500 to-green-500",
+    emoji: "🔬",
+    link: "https://www.organon.com/spain/"
+  },
+];
+---
+
+<section id="projects" class="py-32 px-6 bg-white/5">
+  <div class="max-w-5xl mx-auto">
+
+    <!-- Título principal -->
+    <div class="text-center mb-16">
+      <p class="text-[#fe6e86] font-medium tracking-widest uppercase text-sm mb-4">Projects</p>
+      <h2 class="text-4xl font-black text-white">
+        My most <span class="bg-gradient-to-r from-[#fe6e86] to-[#ffcdd4] bg-clip-text text-transparent">recent work</span>
+      </h2>
+    </div>
+
+    <!-- UX Projects -->
+    <div class="mb-16">
+      <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+        <span class="w-8 h-0.5 bg-gradient-to-r from-[#fe6e86] to-[#ffcdd4]"></span>
+        UX Design
+      </h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        {uxProjects.map(project => (
+          <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`View project ${project.title}`} class="project-card opacity-0 group relative bg-gray-900 rounded-2xl overflow-hidden border border-white/10 hover:border-white/30 transition-all hover:-translate-y-2 duration-300">
+          
+            <div class={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center text-6xl relative`}>
+              {project.emoji}
+              <!-- Overlay hover -->
+              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span class="text-white text-sm font-semibold tracking-widest uppercase flex items-center gap-2">
+                  View project
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white mb-2 group-hover:text-[#fe6e86] transition-colors">{project.title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed mb-4">{project.description}</p>
+              <div class="flex flex-wrap gap-2">
+                {project.tags.map(tag => (
+                  <span class="px-3 py-1 bg-white/5 rounded-full text-xs text-white/50">{tag}</span>
+                ))}
+              </div>
+            </div>
+
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- Web Projects -->
+    <div>
+      <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+        <span class="w-8 h-0.5 bg-gradient-to-r from-[#fe6e86] to-[#ffcdd4]"></span>
+        Web Design
+      </h3>
+      <div class="grid md:grid-cols-3 gap-8">
+        {webProjects.map(project => (
+          <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`View project ${project.title}`} class="project-card opacity-0 group relative bg-gray-900 rounded-2xl overflow-hidden border border-white/10 hover:border-white/30 transition-all hover:-translate-y-2 duration-300">
+            
+            <div class={`h-48 bg-gradient-to-br ${project.color} flex items-center justify-center text-6xl relative`}>
+              {project.emoji}
+              <!-- Overlay hover -->
+              <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span class="text-white text-sm font-semibold tracking-widest uppercase flex items-center gap-2">
+                  View project
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 17L17 7M17 7H7M17 7v10"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <div class="p-6">
+              <h3 class="text-lg font-bold text-white mb-2 group-hover:text-[#fe6e86] transition-colors">{project.title}</h3>
+              <p class="text-white/50 text-sm leading-relaxed mb-4">{project.description}</p>
+              <div class="flex flex-wrap gap-2">
+                {project.tags.map(tag => (
+                  <span class="px-3 py-1 bg-white/5 rounded-full text-xs text-white/50">{tag}</span>
+                ))}
+              </div>
+            </div>
+
+          </a>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import { animate, inView } from 'motion';
+
+  // Título
+  document.querySelectorAll('[data-animate]').forEach((el) => {
+    const delay = Number(el.getAttribute('data-delay') || 0) / 1000;
+    inView(el, () => {
+      animate(el,
+        { opacity: [0, 1], y: [30, 0] },
+        { duration: 0.7, delay, easing: 'ease-out' }
+      );
+    });
+  });
+
+  // Tarjetas de proyectos
+  document.querySelectorAll('.project-card').forEach((card, i) => {
+    inView(card, () => {
+      animate(card,
+        { opacity: [0, 1], y: [40, 0] },
+        { duration: 0.6, delay: i * 0.1, easing: 'ease-out' }
+      );
+    });
+  });
+</script>
