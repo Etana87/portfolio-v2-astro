@@ -1,0 +1,326 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const meta = {
+  title: 'LegalEasy — Case Study · Mercedes de Pascual',
+  description: 'Making legal language human again. An AI-powered app that translates legal jargon into plain language.',
+};
+---
+
+<Layout title={meta.title} description={meta.description}>
+
+  <!-- NAV BACK -->
+  <div class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 bg-black/80 backdrop-blur-md border-b border-brand-mid/10">
+    <a href="/#projects" class="font-display text-base text-white no-underline">
+      Legal<span class="text-brand-mid">Easy</span>
+    </a>
+    <nav class="hidden md:flex gap-8 list-none">
+      <a href="#problem"   class="text-xs text-white/40 hover:text-brand-mid transition-colors no-underline tracking-wide">Problem</a>
+      <a href="#research"  class="text-xs text-white/40 hover:text-brand-mid transition-colors no-underline tracking-wide">Research</a>
+      <a href="#solution"  class="text-xs text-white/40 hover:text-brand-mid transition-colors no-underline tracking-wide">Solution</a>
+      <a href="#testing"   class="text-xs text-white/40 hover:text-brand-mid transition-colors no-underline tracking-wide">Testing</a>
+      <a href="#learnings" class="text-xs text-white/40 hover:text-brand-mid transition-colors no-underline tracking-wide">Learnings</a>
+      <a href="/#projects" class="text-xs text-brand-mid hover:text-brand-light transition-colors no-underline tracking-wide">← Portfolio</a>
+    </nav>
+  </div>
+
+  <main class="bg-[#0a0a0f] text-white min-h-screen">
+
+    <!-- HERO -->
+    <section class="relative flex flex-col justify-center w-full mx-auto overflow-hidden">
+        <div class="absolute top-[-80px] right-[-60px] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(194,14,61,0.22)_0%,transparent_70%)] animate-blob pointer-events-none"></div>
+        <div class="absolute bottom-[10%] left-[-40px] w-[260px] h-[260px] rounded-full bg-[radial-gradient(circle,rgba(254,110,134,0.12)_0%,transparent_70%)] animate-blob animation-delay-4000 pointer-events-none"></div>
+        <div class="relative min-h-screen flex flex-col justify-end px-8 md:px-16 pt-32 pb-20 max-w-6xl mx-auto overflow-hidden">
+            <p class="text-[11px] tracking-[0.16em] uppercase text-brand-mid font-medium mb-6">Product Design Case Study · 2024</p>
+            <h1 class="font-display text-5xl md:text-7xl leading-[1.06] tracking-tight text-white mb-6 max-w-4xl">
+                Making legal language <em class="text-brand-mid not-italic">human</em> again
+            </h1>
+            <p class="text-lg text-white/50 font-light max-w-xl leading-relaxed mb-12">
+                82% of people sign contracts they don't fully understand. We designed LegalEasy — an AI-powered app that translates legal jargon into plain language, in seconds.
+            </p>
+
+            <div class="flex flex-wrap gap-10 pt-8 border-t border-brand-mid/10">
+                <div>
+                <p class="text-[10px] uppercase tracking-[0.13em] text-white/25 mb-1">My role</p>
+                <p class="text-sm text-white">Product Designer</p>
+                </div>
+                <div>
+                <p class="text-[10px] uppercase tracking-[0.13em] text-white/25 mb-1">Team</p>
+                <p class="text-sm text-white">4 designers</p>
+                </div>
+                <div>
+                <p class="text-[10px] uppercase tracking-[0.13em] text-white/25 mb-1">Timeline</p>
+                <p class="text-sm text-white">3 weeks · Bootcamp</p>
+                </div>
+                <div>
+                <p class="text-[10px] uppercase tracking-[0.13em] text-white/25 mb-1">Methods</p>
+                <p class="text-sm text-white">Design Thinking · UX Research · Prototyping</p>
+                </div>
+                <div>
+                <p class="text-[10px] uppercase tracking-[0.13em] text-white/25 mb-1">Tools</p>
+                <p class="text-sm text-white">Figma · Maze · Miro</p>
+            </div>
+        </div>
+      </div>
+      
+    </section>
+
+    <hr class="border-none border-t border-brand-mid/10 max-w-6xl mx-auto" />
+
+    <!-- PROBLEM -->
+    <section id="problem" class="max-w-6xl mx-auto px-8 md:px-16 py-24">
+      <p class="text-[10px] uppercase tracking-[0.16em] text-brand-mid font-medium mb-4">01 — The Problem</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight tracking-tight text-white mb-6 max-w-2xl">
+        Legal language excludes the people it's meant to protect
+      </h2>
+      <div class="w-10 h-0.5 bg-brand-mid mb-8"></div>
+      <p class="text-white/50 font-light max-w-2xl mb-4 leading-relaxed">
+        Every day, citizens sign contracts, receive fines, open bank accounts, and navigate bureaucracy using documents written in a language designed for lawyers — not people. The result? They sign without understanding, feel ashamed to ask, and turn to Google, which makes things worse.
+      </p>
+      <p class="text-white/50 font-light max-w-2xl leading-relaxed">
+        We set out to understand the real depth of this problem before designing anything.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-12">
+        {[
+          { n: '82%', d: 'of people have signed a contract without fully understanding it' },
+          { n: '100+', d: 'people surveyed across ages and education levels' },
+          { n: '2',    d: 'core barriers: document length and complex terminology' },
+          { n: '#1',   d: 'workaround was Google — which increased confusion, not clarity' },
+        ].map(s => (
+          <div class="bg-white/[0.03] border border-brand-mid/10 rounded-2xl p-6 hover:border-brand-mid/20 transition-colors">
+            <p class="font-display text-4xl text-brand-mid leading-none mb-2">{s.n}</p>
+            <p class="text-xs text-white/30 leading-snug">{s.d}</p>
+          </div>
+        ))}
+      </div>
+
+      <blockquote class="border-l-[3px] border-brand-mid pl-8 py-4 bg-brand-mid/5 rounded-r-xl my-12">
+        <p class="font-display text-lg italic text-white leading-relaxed">
+          "One of the biggest problems is when clients use Google to clarify doubts. Google creates more problems than solutions. They don't know how to search properly."
+        </p>
+        <cite class="block text-xs text-white/30 mt-4 not-italic tracking-wide">— Legal professional, interview participant</cite>
+      </blockquote>
+    </section>
+
+    <hr class="border-none border-t border-brand-mid/10 max-w-6xl mx-auto" />
+
+    <!-- RESEARCH -->
+    <section id="research" class="max-w-6xl mx-auto px-8 md:px-16 py-24">
+      <p class="text-[10px] uppercase tracking-[0.16em] text-brand-mid font-medium mb-4">02 — Research</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight tracking-tight text-white mb-6 max-w-2xl">
+        We listened before we designed
+      </h2>
+      <div class="w-10 h-0.5 bg-brand-mid mb-8"></div>
+      <p class="text-white/50 font-light max-w-2xl leading-relaxed mb-12">
+        Our research combined a quantitative survey of over 100 participants with qualitative interviews of both everyday users and legal professionals. This dual perspective revealed not just what users struggled with, but why the problem persisted.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
+        {[
+          { label: 'Method 01', title: 'Desk research & benchmarking', body: 'We mapped existing solutions and identified their shared weakness: they explain terms in isolation, without context or consequence for the user.' },
+          { label: 'Method 02', title: 'Survey — 100+ participants', body: 'Mixed demographics across Spain. We focused on frequency of document encounters, comprehension difficulties, and help-seeking behaviour.' },
+          { label: 'Method 03', title: 'User interviews', body: 'Two scripts: one for everyday users, one for legal professionals. This revealed the systemic nature of the problem from both sides.' },
+          { label: 'Method 04', title: 'Affinity mapping', body: 'We clustered all findings into themes. Three categories emerged: plain language, tools, and accessible education.' },
+        ].map(c => (
+          <div class="bg-white/[0.03] border border-brand-mid/10 rounded-2xl p-7 hover:border-brand-mid/20 transition-colors">
+            <p class="text-[10px] uppercase tracking-[0.12em] text-brand-mid mb-3">{c.label}</p>
+            <h3 class="font-display text-lg text-white mb-2">{c.title}</h3>
+            <p class="text-sm text-white/40 font-light leading-relaxed">{c.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        {[
+          { title: 'Shame as a barrier', body: 'Users didn\'t ask for help not because they didn\'t need it — but because they felt embarrassed. Invisible in the survey data.' },
+          { title: 'Google makes it worse', body: 'The most common workaround actively increased confusion. Users drew wrong conclusions. Our biggest opportunity.' },
+          { title: 'Context beats translation', body: 'Users didn\'t just need definitions — they needed to understand what a term meant for them, in their situation.' },
+          { title: 'Length is a UX problem', body: 'Document length alone caused abandonment. Users skipped critical sections not out of laziness, but because they were overwhelmed.' },
+        ].map(i => (
+          <div class="bg-white/[0.03] border border-brand-mid/10 rounded-2xl p-6 hover:border-brand-mid/20 transition-colors">
+            <div class="w-8 h-8 rounded-lg bg-brand-mid/10 flex items-center justify-center mb-4">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#fe6e86" stroke-width="1.4"/><line x1="8" y1="5" x2="8" y2="8.5" stroke="#fe6e86" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="11" r="0.8" fill="#fe6e86"/></svg>
+            </div>
+            <h4 class="text-sm font-medium text-white mb-2">{i.title}</h4>
+            <p class="text-xs text-white/35 leading-relaxed">{i.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <blockquote class="border-l-[3px] border-brand-mid pl-8 py-4 bg-brand-mid/5 rounded-r-xl">
+        <p class="font-display text-lg italic text-white leading-relaxed">
+          "Most people don't ask questions out of shame or laziness when reading documents."
+        </p>
+        <cite class="block text-xs text-white/30 mt-4 not-italic tracking-wide">— Key insight from user interviews</cite>
+      </blockquote>
+    </section>
+
+    <hr class="border-none border-t border-brand-mid/10 max-w-6xl mx-auto" />
+
+    <!-- SOLUTION -->
+    <section id="solution" class="max-w-6xl mx-auto px-8 md:px-16 py-24">
+      <p class="text-[10px] uppercase tracking-[0.16em] text-brand-mid font-medium mb-4">03 — The Solution</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight tracking-tight text-white mb-6 max-w-2xl">
+        One core flow. No noise.
+      </h2>
+      <div class="w-10 h-0.5 bg-brand-mid mb-8"></div>
+      <p class="text-white/50 font-light max-w-2xl leading-relaxed mb-4">
+        After an extensive ideation phase — gamification, mascots, video pills, Q&A chatbots — we made a deliberate product decision: focus on one core flow and do it exceptionally well.
+      </p>
+      <p class="text-white font-normal max-w-2xl leading-relaxed mb-4">
+        Upload a document → AI detects complexity → Plain language output with context-aware explanations and risk alerts.
+      </p>
+      <p class="text-white/50 font-light max-w-2xl leading-relaxed mb-12">
+        We used a MoSCoW framework to ruthlessly prioritise and avoid the scope creep that plagues most bootcamp projects.
+      </p>
+
+      <!-- MoSCoW -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
+        <div>
+          <div class="bg-brand-dark text-brand-light text-[11px] uppercase tracking-[0.1em] font-medium px-4 py-3 rounded-t-xl">Must have</div>
+          <div class="border border-brand-mid/10 border-t-0 rounded-b-xl overflow-hidden">
+            {['Document upload (PDF / photo)', 'AI term detection', 'Plain language explanation', 'Document summary', 'Risk / alert highlighting'].map(item => (
+              <div class="px-4 py-3 text-sm text-white/50 border-b border-brand-mid/10 bg-white/[0.02] last:border-b-0">{item}</div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <div class="bg-white/[0.06] text-white/60 text-[11px] uppercase tracking-[0.1em] font-medium px-4 py-3 rounded-t-xl">Should have</div>
+          <div class="border border-brand-mid/10 border-t-0 rounded-b-xl overflow-hidden">
+            {['Filter by document type', 'Basic / expert mode', 'Document history', 'Share results', 'Q&A per document'].map(item => (
+              <div class="px-4 py-3 text-sm text-white/50 border-b border-brand-mid/10 bg-white/[0.02] last:border-b-0">{item}</div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <div class="bg-white/[0.03] text-white/30 text-[11px] uppercase tracking-[0.1em] font-medium px-4 py-3 rounded-t-xl">Won't have (v1)</div>
+          <div class="border border-brand-mid/10 border-t-0 rounded-b-xl overflow-hidden">
+            {['Gamification', 'Video pills', 'Virtual mascot', 'Social features', 'Legal advice'].map(item => (
+              <div class="px-4 py-3 text-sm text-white/30 border-b border-brand-mid/10 bg-white/[0.02] last:border-b-0">{item}</div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <h3 class="font-display text-2xl text-white mb-6">Key design decisions</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {[
+          { label: 'Decision 01', title: 'Highlights over modals', body: 'Inline term highlighting with expandable cards kept users in context, reducing cognitive load compared to modal-based definitions.' },
+          { label: 'Decision 02', title: 'Risk alerts as first-class feature', body: 'Surfacing harmful clauses shifted the product from "dictionary" to "legal companion." The insight that elevated the entire concept.' },
+          { label: 'Decision 03', title: 'Summary before terms', body: 'Leading with a plain-language summary gave users immediate value and reduced anxiety before engaging with detailed explanations.' },
+          { label: 'Decision 04', title: 'AI humanisation', body: 'Testing showed users responded better when explanations used "you" and specific examples. We tuned prompts to always personalise the voice.' },
+        ].map(c => (
+          <div class="bg-white/[0.03] border border-brand-mid/10 rounded-2xl p-7 hover:border-brand-mid/20 transition-colors">
+            <p class="text-[10px] uppercase tracking-[0.12em] text-brand-mid mb-3">{c.label}</p>
+            <h3 class="font-display text-lg text-white mb-2">{c.title}</h3>
+            <p class="text-sm text-white/40 font-light leading-relaxed">{c.body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <hr class="border-none border-t border-brand-mid/10 max-w-6xl mx-auto" />
+
+    <!-- TESTING -->
+    <section id="testing" class="max-w-6xl mx-auto px-8 md:px-16 py-24">
+      <p class="text-[10px] uppercase tracking-[0.16em] text-brand-mid font-medium mb-4">04 — Testing & Iteration</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight tracking-tight text-white mb-6 max-w-2xl">
+        We tested early and learned fast
+      </h2>
+      <div class="w-10 h-0.5 bg-brand-mid mb-8"></div>
+      <p class="text-white/50 font-light max-w-2xl leading-relaxed mb-12">
+        We ran usability tests with low-fidelity wireframes in Maze before investing in high-fidelity design. Two flows were tested: uploading a document and navigating the glossary.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+        <div class="bg-green-900/20 border border-green-500/20 rounded-2xl p-6">
+          <p class="text-[10px] uppercase tracking-[0.1em] text-green-400 font-medium mb-2">Success</p>
+          <h4 class="text-base font-medium text-white mb-2">Upload task: 84% success rate</h4>
+          <p class="text-sm text-white/35 leading-relaxed">Users found the upload flow intuitive. Average completion time was 30 seconds — within our target range.</p>
+        </div>
+        <div class="bg-brand-mid/5 border border-brand-mid/20 rounded-2xl p-6">
+          <p class="text-[10px] uppercase tracking-[0.1em] text-brand-mid font-medium mb-2">Problem identified</p>
+          <h4 class="text-base font-medium text-white mb-2">Glossary: 50%+ failure rate</h4>
+          <p class="text-sm text-white/35 leading-relaxed">Users couldn't reliably find saved documents via the glossary. The navigation needed a full structural rethink.</p>
+        </div>
+        <div class="bg-brand-mid/5 border border-brand-mid/20 rounded-2xl p-6">
+          <p class="text-[10px] uppercase tracking-[0.1em] text-brand-mid font-medium mb-2">Insight</p>
+          <h4 class="text-base font-medium text-white mb-2">AI felt cold and impersonal</h4>
+          <p class="text-sm text-white/35 leading-relaxed">Early outputs read like encyclopaedia entries. Users wanted to feel spoken to — not lectured. We rewrote the AI prompt voice entirely.</p>
+        </div>
+        <div class="bg-green-900/20 border border-green-500/20 rounded-2xl p-6">
+          <p class="text-[10px] uppercase tracking-[0.1em] text-green-400 font-medium mb-2">Validation</p>
+          <h4 class="text-base font-medium text-white mb-2">High perceived usefulness</h4>
+          <p class="text-sm text-white/35 leading-relaxed">Despite UX friction, users rated the concept 4–5/5 for usefulness. The problem was real; execution needed refinement.</p>
+        </div>
+      </div>
+
+      <p class="text-white/50 font-light max-w-2xl leading-relaxed">
+        Based on testing, we restructured the navigation, separated the document library from the glossary, and rewrote AI output prompts to use direct, personal language with practical examples.
+      </p>
+    </section>
+
+    <hr class="border-none border-t border-brand-mid/10 max-w-6xl mx-auto" />
+
+    <!-- LEARNINGS -->
+    <section id="learnings" class="max-w-6xl mx-auto px-8 md:px-16 py-24">
+      <p class="text-[10px] uppercase tracking-[0.16em] text-brand-mid font-medium mb-4">05 — What I Learned</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight tracking-tight text-white mb-6 max-w-2xl">
+        Product thinking starts before the first sketch
+      </h2>
+      <div class="w-10 h-0.5 bg-brand-mid mb-12"></div>
+
+      <div class="bg-white/[0.03] border border-brand-mid/10 rounded-2xl p-10 mb-12">
+        <h3 class="font-display text-2xl text-brand-light mb-10">Key takeaways</h3>
+        <div class="space-y-8">
+          {[
+            { n: '01', title: 'Focus is a product decision, not a design decision', body: 'The strongest move we made was cutting features. A product that does one thing exceptionally beats a feature list every time. The MoSCoW process was more valuable than any wireframe.' },
+            { n: '02', title: 'Emotional barriers are invisible in surveys', body: 'The shame of not understanding legal language only emerged through qualitative interviews. Quantitative data told us what — conversations told us why. Both are non-negotiable.' },
+            { n: '03', title: 'Test the concept, not the polish', body: 'Our most valuable feedback came from low-fidelity wireframes. Testing early saved weeks of rework and revealed a critical navigation flaw before we invested in visual design.' },
+            { n: '04', title: 'AI is a design material, not just a technology', body: 'How we prompted the AI shaped the entire user experience. Voice, tone, and practical examples were product design choices — not engineering ones.' },
+          ].map(l => (
+            <div class="flex gap-6 items-start">
+              <span class="font-display text-3xl text-brand-mid/20 leading-none flex-shrink-0 w-9">{l.n}</span>
+              <div>
+                <h4 class="text-sm font-medium text-white mb-1">{l.title}</h4>
+                <p class="text-sm text-white/35 font-light leading-relaxed">{l.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <h3 class="font-display text-2xl text-white mb-4">What's next</h3>
+      <p class="text-white/50 font-light max-w-2xl leading-relaxed mb-3">
+        With current AI capabilities, LegalEasy could be built as a real product today. The next iteration would include live AI analysis, Q&A per document, document type–specific guidance, and a freemium model targeting individuals and small businesses.
+      </p>
+      <p class="text-white/50 font-light max-w-2xl leading-relaxed">
+        The legal tech market remains underserved for everyday citizens — not just corporations. That's the gap LegalEasy was designed to fill.
+      </p>
+    </section>
+
+    <hr class="border-none border-t border-brand-mid/10 max-w-6xl mx-auto" />
+
+    <!-- FOOTER -->
+    <footer class="max-w-6xl mx-auto px-8 md:px-16 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div>
+        <p class="font-display text-base text-white">Mercedes de Pascual</p>
+        <p class="text-sm text-white/25 mt-1">Product Designer · UX/UI · UX Engineer</p>
+      </div>
+      <div class="flex gap-6">
+        <a href="https://medium.com/@etana87/la-parte-contratante-de-la-primera-parte-bbdd4c0db7f0"
+           target="_blank" rel="noopener"
+           class="text-sm text-brand-mid hover:text-brand-light transition-colors no-underline border-b border-transparent hover:border-brand-mid">
+          Read on Medium →
+        </a>
+        <a href="https://www.mpaste.es/"
+           class="text-sm text-brand-mid hover:text-brand-light transition-colors no-underline border-b border-transparent hover:border-brand-mid">
+          mpaste.es →
+        </a>
+      </div>
+    </footer>
+
+  </main>
+
+</Layout>

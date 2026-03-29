@@ -22,7 +22,8 @@ const uxProjects = [
     tags: ["UX Design", "Design Thinking", "Personal Project"],
     color: "from-purple-500 to-indigo-500",
     image: "/Assets/img/projects/legaleasy-mobile.png",
-    link: "https://medium.com/@etana87/la-parte-contratante-de-la-primera-parte-bbdd4c0db7f0"
+    link: "/projects/legaleasy",
+    internal: true
   },
   {
     title: "Nakama",
@@ -99,7 +100,7 @@ const webProjects = [
       </h3>
       <div class="grid md:grid-cols-3 gap-8">
         {uxProjects.map(project => (
-          <a href={project.link} target="_blank" rel="noopener noreferrer" aria-label={`View project ${project.title}`} class="project-card opacity-0 group relative bg-gray-900 rounded-2xl overflow-hidden border border-white/10 hover:border-white/30 transition-all hover:-translate-y-2 duration-300">
+          <a href={project.link}  target={project.internal ? '_self' : '_blank'} rel={project.internal ? '' : 'noopener noreferrer'} aria-label={`View project ${project.title}`} class="project-card opacity-0 group relative bg-gray-900 rounded-2xl overflow-hidden border border-white/10 hover:border-white/30 transition-all hover:-translate-y-2 duration-300">
           
             <div class="h-48 overflow-hidden relative">
               <img
