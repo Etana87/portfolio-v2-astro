@@ -1,0 +1,326 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const meta = {
+  title: 'MercaOrder — Case Study · Mercedes de Pascual',
+  description: 'Shop without entering the supermarket. Improving the shopping experience for people with reduced mobility.',
+};
+---
+
+<Layout title={meta.title} description={meta.description}>
+
+  <!-- NAV BACK -->
+  <div class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 bg-black/80 backdrop-blur-md border-b border-brand-mid/10">
+    <a href="/" class="font-display text-base text-white no-underline">
+      Merca<span class="text-brand-mid">order</span>
+    </a>
+    <nav class="hidden md:flex gap-8 list-none">
+      <a href="#problem"   class="text-xs text-white/40 hover:text-brand-mid transition-colors no-underline tracking-wide">Problem</a>
+      <a href="#research"  class="text-xs text-white/40 hover:text-brand-mid transition-colors no-underline tracking-wide">Research</a>
+      <a href="#solution"  class="text-xs text-white/40 hover:text-brand-mid transition-colors no-underline tracking-wide">Solution</a>
+      <a href="#testing"   class="text-xs text-white/40 hover:text-brand-mid transition-colors no-underline tracking-wide">Testing</a>
+      <a href="#learnings" class="text-xs text-white/40 hover:text-brand-mid transition-colors no-underline tracking-wide">Learnings</a>
+      <a href="/" class="text-xs text-brand-mid hover:text-brand-light transition-colors no-underline tracking-wide">← Portfolio</a>
+    </nav>
+  </div>
+
+  <main class="bg-[#0a0a0f] text-white min-h-screen">
+
+    <!-- HERO -->
+    <section class="relative flex flex-col justify-center w-full mx-auto overflow-hidden">
+        <div class="absolute top-[-80px] right-[-60px] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(194,14,61,0.22)_0%,transparent_70%)] animate-blob pointer-events-none"></div>
+        <div class="absolute bottom-[10%] left-[-40px] w-[260px] h-[260px] rounded-full bg-[radial-gradient(circle,rgba(254,110,134,0.12)_0%,transparent_70%)] animate-blob animation-delay-4000 pointer-events-none"></div>
+        <div class="relative min-h-screen flex flex-col justify-end px-8 md:px-16 pt-32 pb-20 max-w-6xl mx-auto overflow-hidden">
+            <p class="text-[11px] tracking-[0.16em] uppercase text-brand-mid font-medium mb-6">Product Design Case Study · 2024</p>
+            <h1 class="font-display text-5xl md:text-7xl leading-[1.06] tracking-tight text-white mb-6 max-w-4xl">
+                Look Mom,<br><em class="text-brand-mid not-italic">no need to enter the supermarket!</em>
+            </h1>
+            <p class="text-lg text-white/50 font-light max-w-xl leading-relaxed mb-12">
+                82% of supermarkets are not adapted for people with reduced mobility. We designed Mercaorder — a kiosk system that lets you shop without stepping inside.
+            </p>
+
+            <div class="flex flex-wrap gap-10 pt-8 border-t border-brand-mid/10">
+                <div>
+                <p class="text-[10px] uppercase tracking-[0.13em] text-white/25 mb-1">My role</p>
+                <p class="text-sm text-white">Product Designer</p>
+                </div>
+                <div>
+                <p class="text-[10px] uppercase tracking-[0.13em] text-white/25 mb-1">Team</p>
+                <p class="text-sm text-white">4 designers</p>
+                </div>
+                <div>
+                <p class="text-[10px] uppercase tracking-[0.13em] text-white/25 mb-1">Timeline</p>
+                <p class="text-sm text-white">1 week · Design Sprint</p>
+                </div>
+                <div>
+                <p class="text-[10px] uppercase tracking-[0.13em] text-white/25 mb-1">Methods</p>
+                <p class="text-sm text-white">Design Sprint · UX Research · Prototyping</p>
+                </div>
+                <div>
+                <p class="text-[10px] uppercase tracking-[0.13em] text-white/25 mb-1">Tools</p>
+                <p class="text-sm text-white">Figma · Maze · Miro</p>
+            </div>
+        </div>
+      </div>
+
+    </section>
+
+    <hr class="border-none border-t border-brand-mid/10 max-w-6xl mx-auto" />
+
+    <!-- PROBLEM -->
+    <section id="problem" class="max-w-6xl mx-auto px-8 md:px-16 py-24">
+      <p class="text-[10px] uppercase tracking-[0.16em] text-brand-mid font-medium mb-4">01 — The Problem</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight tracking-tight text-white mb-6 max-w-2xl">
+        Supermarkets are not ready for people with reduced mobility
+      </h2>
+      <div class="w-10 h-0.5 bg-brand-mid mb-8"></div>
+      <p class="text-white/50 font-light max-w-2xl mb-4 leading-relaxed">
+        People with mobility limitations face significant barriers when shopping at physical supermarkets. From users with crutches after accidents, to parents with strollers, to people with back pain — the current shopping experience excludes those who need it most.
+      </p>
+      <p class="text-white/50 font-light max-w-2xl leading-relaxed">
+        We set out to understand the real depth of this problem before designing anything.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 my-12">
+        {[
+          { n: '82%', d: 'of supermarkets are not adapted for people with reduced mobility' },
+          { n: '100+', d: 'aisles a person with crutches must walk through' },
+          { n: '3',    d: 'user groups: mobility-impaired, parents, people with pain' },
+          { n: '#1',   d: 'workaround was avoiding in-store shopping altogether' },
+        ].map(s => (
+          <div class="bg-white/[0.03] border border-brand-mid/10 rounded-2xl p-6 hover:border-brand-mid/20 transition-colors">
+            <p class="font-display text-4xl text-brand-mid leading-none mb-2">{s.n}</p>
+            <p class="text-xs text-white/30 leading-snug">{s.d}</p>
+          </div>
+        ))}
+      </div>
+
+      <blockquote class="border-l-[3px] border-brand-mid pl-8 py-4 bg-brand-mid/5 rounded-r-xl my-12">
+        <p class="font-display text-lg italic text-white leading-relaxed">
+          "Supermarkets are not yet prepared for users with reduced mobility. Every shopping trip is a challenge."
+        </p>
+        <cite class="block text-xs text-white/30 mt-4 not-italic tracking-wide">— User interview participant</cite>
+      </blockquote>
+    </section>
+
+    <hr class="border-none border-t border-brand-mid/10 max-w-6xl mx-auto" />
+
+    <!-- RESEARCH -->
+    <section id="research" class="max-w-6xl mx-auto px-8 md:px-16 py-24">
+      <p class="text-[10px] uppercase tracking-[0.16em] text-brand-mid font-medium mb-4">02 — Research</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight tracking-tight text-white mb-6 max-w-2xl">
+        We listened before we designed
+      </h2>
+      <div class="w-10 h-0.5 bg-brand-mid mb-8"></div>
+      <p class="text-white/50 font-light max-w-2xl leading-relaxed mb-12">
+        We used the Design Sprint methodology (Jake Knapp, 2010) to rapidly understand, prototype, and validate our solution with real users in just five days.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-16">
+        {[
+          { label: 'Monday', title: 'Sprint Questions & HMW', body: 'How Might We questions, clustering, voting, and mixing User Persona with User Journey.' },
+          { label: 'Tuesday', title: 'Lightning Demos & Crazy 8s', body: 'Rapid ideation with Lightning Demos, Crazy Eight exercises, and low-fidelity wireframes.' },
+          { label: 'Wednesday', title: 'Art Museum', body: 'Heat map voting and storyboard with final design decisions.' },
+          { label: 'Thursday', title: 'Prototyping', body: 'High-fidelity prototype in Figma (1920x1080 Full HD) with complete user flows.' },
+        ].map(c => (
+          <div class="bg-white/[0.03] border border-brand-mid/10 rounded-2xl p-7 hover:border-brand-mid/20 transition-colors">
+            <p class="text-[10px] uppercase tracking-[0.12em] text-brand-mid mb-3">{c.label}</p>
+            <h3 class="font-display text-lg text-white mb-2">{c.title}</h3>
+            <p class="text-sm text-white/40 font-light leading-relaxed">{c.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        {[
+          { title: 'QR over biometrics', body: 'Users prefer QR access over facial recognition for privacy and simplicity.' },
+          { title: 'Large touch targets', body: 'The kiosk must have large components for users with limited dexterity.' },
+          { title: 'Delivery matters', body: 'Home delivery is as important as in-store pickup for many users.' },
+          { title: 'Guest checkout', body: 'Users want to shop without creating an account or sharing personal data.' },
+        ].map(i => (
+          <div class="bg-white/[0.03] border border-brand-mid/10 rounded-2xl p-6 hover:border-brand-mid/20 transition-colors">
+            <div class="w-8 h-8 rounded-lg bg-brand-mid/10 flex items-center justify-center mb-4">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#fe6e86" stroke-width="1.4"/><line x1="8" y1="5" x2="8" y2="8.5" stroke="#fe6e86" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="11" r="0.8" fill="#fe6e86"/></svg>
+            </div>
+            <h4 class="text-sm font-medium text-white mb-2">{i.title}</h4>
+            <p class="text-xs text-white/35 leading-relaxed">{i.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <blockquote class="border-l-[3px] border-brand-mid pl-8 py-4 bg-brand-mid/5 rounded-r-xl">
+        <p class="font-display text-lg italic text-white leading-relaxed">
+          "The touchscreen at the supermarket entrance must have large components to be accessible."
+        </p>
+        <cite class="block text-xs text-white/30 mt-4 not-italic tracking-wide">— Key insight from user research</cite>
+      </blockquote>
+    </section>
+
+    <hr class="border-none border-t border-brand-mid/10 max-w-6xl mx-auto" />
+
+    <!-- SOLUTION -->
+    <section id="solution" class="max-w-6xl mx-auto px-8 md:px-16 py-24">
+      <p class="text-[10px] uppercase tracking-[0.16em] text-brand-mid font-medium mb-4">03 — The Solution</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight tracking-tight text-white mb-6 max-w-2xl">
+        One core flow. No noise.
+      </h2>
+      <div class="w-10 h-0.5 bg-brand-mid mb-8"></div>
+      <p class="text-white/50 font-light max-w-2xl leading-relaxed mb-4">
+        Mercaorder Kiosk is a desktop-type touchscreen integrated at the supermarket entrance, designed with large components to facilitate viewing and use for everyone.
+      </p>
+      <p class="text-white font-normal max-w-2xl leading-relaxed mb-4">
+        Select products → Choose pickup or delivery → Confirm and pay — all without entering the store.
+      </p>
+      <p class="text-white/50 font-light max-w-2xl leading-relaxed mb-12">
+        We used a MoSCoW framework to ruthlessly prioritise and avoid scope creep.
+      </p>
+
+      <!-- MoSCoW -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
+        <div>
+          <div class="bg-brand-dark text-brand-light text-[11px] uppercase tracking-[0.1em] font-medium px-4 py-3 rounded-t-xl">Must have</div>
+          <div class="border border-brand-mid/10 border-t-0 rounded-b-xl overflow-hidden">
+            {['Purchase flow', 'Pickup point collection', 'Home delivery', 'Login & registration', 'QR code access'].map(item => (
+              <div class="px-4 py-3 text-sm text-white/50 border-b border-brand-mid/10 bg-white/[0.02] last:border-b-0">{item}</div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <div class="bg-white/[0.06] text-white/60 text-[11px] uppercase tracking-[0.1em] font-medium px-4 py-3 rounded-t-xl">Should have</div>
+          <div class="border border-brand-mid/10 border-t-0 rounded-b-xl overflow-hidden">
+            {['User profile', 'Time slot selection', 'Address management', 'Order history'].map(item => (
+              <div class="px-4 py-3 text-sm text-white/50 border-b border-brand-mid/10 bg-white/[0.02] last:border-b-0">{item}</div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <div class="bg-white/[0.03] text-white/30 text-[11px] uppercase tracking-[0.1em] font-medium px-4 py-3 rounded-t-xl">Won't have (v1)</div>
+          <div class="border border-brand-mid/10 border-t-0 rounded-b-xl overflow-hidden">
+            {['Voice recognition', 'Augmented reality', 'Facial recognition', 'Social features'].map(item => (
+              <div class="px-4 py-3 text-sm text-white/30 border-b border-brand-mid/10 bg-white/[0.02] last:border-b-0">{item}</div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <h3 class="font-display text-2xl text-white mb-6">Key design decisions</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {[
+          { label: 'Decision 01', title: 'Large touch components', body: 'Minimum 48px touch targets to ensure accessibility for users with limited dexterity or coordination issues.' },
+          { label: 'Decision 02', title: 'High contrast UI', body: 'WCAG-compliant color contrasts to ensure readability for users with visual impairments.' },
+          { label: 'Decision 03', title: 'Simplified checkout', body: 'Minimum number of steps to complete a purchase, reducing cognitive load and frustration.' },
+          { label: 'Decision 04', title: 'Guest checkout option', body: 'Users can complete purchases without creating an account, reducing barriers to adoption.' },
+        ].map(c => (
+          <div class="bg-white/[0.03] border border-brand-mid/10 rounded-2xl p-7 hover:border-brand-mid/20 transition-colors">
+            <p class="text-[10px] uppercase tracking-[0.12em] text-brand-mid mb-3">{c.label}</p>
+            <h3 class="font-display text-lg text-white mb-2">{c.title}</h3>
+            <p class="text-sm text-white/40 font-light leading-relaxed">{c.body}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <hr class="border-none border-t border-brand-mid/10 max-w-6xl mx-auto" />
+
+    <!-- TESTING -->
+    <section id="testing" class="max-w-6xl mx-auto px-8 md:px-16 py-24">
+      <p class="text-[10px] uppercase tracking-[0.16em] text-brand-mid font-medium mb-4">04 — Testing & Iteration</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight tracking-tight text-white mb-6 max-w-2xl">
+        We tested early and learned fast
+      </h2>
+      <div class="w-10 h-0.5 bg-brand-mid mb-8"></div>
+      <p class="text-white/50 font-light max-w-2xl leading-relaxed mb-12">
+        We tested the prototype with 6 people aged 35 to 67, all with some form of mobility limitation. We measured task completion, error rates, and user satisfaction.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-12">
+        <div class="bg-green-900/20 border border-green-500/20 rounded-2xl p-6">
+          <p class="text-[10px] uppercase tracking-[0.1em] text-green-400 font-medium mb-2">Success</p>
+          <h4 class="text-base font-medium text-white mb-2">85.7% task success rate</h4>
+          <p class="text-sm text-white/35 leading-relaxed">Most users completed purchase flows correctly. Above our 80% target threshold.</p>
+        </div>
+        <div class="bg-brand-mid/5 border border-brand-mid/20 rounded-2xl p-6">
+          <p class="text-[10px] uppercase tracking-[0.1em] text-brand-mid font-medium mb-2">Problem identified</p>
+          <h4 class="text-base font-medium text-white mb-2">19.7% failed clicks</h4>
+          <p class="text-sm text-white/35 leading-relaxed">Some buttons were too small. We increased touch targets by 25% after testing.</p>
+        </div>
+        <div class="bg-brand-mid/5 border border-brand-mid/20 rounded-2xl p-6">
+          <p class="text-[10px] uppercase tracking-[0.1em] text-brand-mid font-medium mb-2">Insight</p>
+          <h4 class="text-base font-medium text-white mb-2">Average time: 204.8 seconds</h4>
+          <p class="text-sm text-white/35 leading-relaxed">Within acceptable range for a first-time user completing a full purchase flow.</p>
+        </div>
+        <div class="bg-green-900/20 border border-green-500/20 rounded-2xl p-6">
+          <p class="text-[10px] uppercase tracking-[0.1em] text-green-400 font-medium mb-2">Validation</p>
+          <h4 class="text-base font-medium text-white mb-2">High perceived usefulness</h4>
+          <p class="text-sm text-white/35 leading-relaxed">Despite minor UX friction, users rated the concept 4–5/5 for usefulness. The problem was real.</p>
+        </div>
+      </div>
+
+      <p class="text-white/50 font-light max-w-2xl leading-relaxed">
+        Based on testing, we restructured touch targets for better accessibility, simplified the delivery selection flow, and added clearer progress indicators throughout the purchase process.
+      </p>
+    </section>
+
+    <hr class="border-none border-t border-brand-mid/10 max-w-6xl mx-auto" />
+
+    <!-- LEARNINGS -->
+    <section id="learnings" class="max-w-6xl mx-auto px-8 md:px-16 py-24">
+      <p class="text-[10px] uppercase tracking-[0.16em] text-brand-mid font-medium mb-4">05 — What I Learned</p>
+      <h2 class="font-display text-4xl md:text-5xl leading-tight tracking-tight text-white mb-6 max-w-2xl">
+        Product thinking starts before the first sketch
+      </h2>
+      <div class="w-10 h-0.5 bg-brand-mid mb-12"></div>
+
+      <div class="bg-white/[0.03] border border-brand-mid/10 rounded-2xl p-10 mb-12">
+        <h3 class="font-display text-2xl text-brand-light mb-10">Key takeaways</h3>
+        <div class="space-y-8">
+          {[
+            { n: '01', title: 'Empathy should be paramount', body: 'Designing for accessibility benefits everyone — parents with strollers, elderly people, and those with temporary injuries benefit from the same solutions designed for permanent mobility limitations.' },
+            { n: '02', title: 'Design Sprint for rapid validation', body: 'Five days to go from problem to tested prototype. The sprint forced focus and prevented endless iterations on the wrong solution.' },
+            { n: '03', title: 'Test with real users early', body: 'Low-fidelity testing revealed problems we hadn\'t anticipated. Early validation saved weeks of rework on the wrong design.' },
+            { n: '04', title: 'Universal design is good design', body: 'Solutions built for people with disabilities often become the best solutions for everyone. Large buttons, clear feedback, simple flows — these benefit all users.' },
+          ].map(l => (
+            <div class="flex gap-6 items-start">
+              <span class="font-display text-3xl text-brand-mid/20 leading-none flex-shrink-0 w-9">{l.n}</span>
+              <div>
+                <h4 class="text-sm font-medium text-white mb-1">{l.title}</h4>
+                <p class="text-sm text-white/35 font-light leading-relaxed">{l.body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <h3 class="font-display text-2xl text-white mb-4">What's next</h3>
+      <p class="text-white/50 font-light max-w-2xl leading-relaxed mb-3">
+        The next iteration would include voice recognition for users without use of arms, augmented reality to show products in situ, and partnerships with supermarkets for pilot implementation.
+      </p>
+      <p class="text-white/50 font-light max-w-2xl leading-relaxed">
+        Mercaorder could be built as a real product today with current technology. The retail accessibility gap remains largely underserved — and that's the opportunity Mercaorder was designed to fill.
+      </p>
+    </section>
+
+    <hr class="border-none border-t border-brand-mid/10 max-w-6xl mx-auto" />
+
+    <!-- FOOTER -->
+    <footer class="max-w-6xl mx-auto px-8 md:px-16 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div>
+        <p class="font-display text-base text-white">Mercedes de Pascual</p>
+        <p class="text-sm text-white/25 mt-1">Product Designer · UX/UI · UX Engineer</p>
+      </div>
+      <div class="flex gap-6">
+        <a href="https://medium.com/@etana87/mira-mamá-sin-entrar-al-súper-ebb721b336cc"
+           target="_blank" rel="noopener"
+           class="text-sm text-brand-mid hover:text-brand-light transition-colors no-underline border-b border-transparent hover:border-brand-mid">
+          Read on Medium →
+        </a>
+        <a href="https://www.mpaste.es/"
+           class="text-sm text-brand-mid hover:text-brand-light transition-colors no-underline border-b border-transparent hover:border-brand-mid">
+          mpaste.es →
+        </a>
+      </div>
+    </footer>
+
+  </main>
+
+</Layout>
